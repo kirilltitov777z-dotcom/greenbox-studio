@@ -33,6 +33,12 @@
                 android:textSize="12sp" android:textColor="@color/white" android:layout_marginEnd="4dp" />
             <Button android:id="@+id/btnShare" android:layout_width="wrap_content" android:layout_height="38dp"
                 android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Поделиться"
+                android:textSize="12sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnRandom" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="80dp" android:background="@drawable/btn_soft" android:text="🎲 Фильтр"
+                android:textSize="12sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnReset" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Сброс"
                 android:textSize="12sp" android:textColor="@color/green_dark" />
         </LinearLayout>
     </HorizontalScrollView>

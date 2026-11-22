@@ -43,7 +43,7 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-    private fun seek(max: Int, initial: Int, label: (Int) -> String, onChange: (Int) -> Unit): SeekBar {
+    private fun seekBox(max: Int, initial: Int, label: (Int) -> String, onChange: (Int) -> Unit): LinearLayout {
         val valueText = TextView(this).apply {
             text = label(initial)
             textSize = 13f
@@ -63,17 +63,11 @@ class SettingsActivity : AppCompatActivity() {
                 override fun onStopTrackingTouch(s: SeekBar?) { }
             })
         }
-        val box = LinearLayout(this).apply {
+        return LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             addView(bar, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
             addView(valueText)
         }
-        tag = box
-        return bar
-    }
-
-    private fun addBar(root: LinearLayout, bar: SeekBar) {
-        root.addView(bar.tag as LinearLayout)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,7 +91,7 @@ class SettingsActivity : AppCompatActivity() {
 
         root.addView(section("🖼 Фоторедактор"))
         root.addView(label("Качество сохранения JPEG, %"))
-        addBar(root, seek(50, Prefs.imageQuality - 50, { "${it + 50}%" }) {
+        root.addView(seekBox(50, Prefs.imageQuality - 50, { "${it + 50}%" }) {
             Prefs.imageQuality = it + 50
         })
         root.addView(label("Максимальный размер фото при открытии"))
@@ -106,7 +100,7 @@ class SettingsActivity : AppCompatActivity() {
             Prefs.maxImageSize = when (pos) { 0 -> 1200; 2 -> 2400; else -> 1600 }
         })
         root.addView(label("Толщина кисти, px"))
-        addBar(root, seek(38, Prefs.brushSize - 2, { "${it + 2} px" }) {
+        root.addView(seekBox(38, Prefs.brushSize - 2, { "${it + 2} px" }) {
             Prefs.brushSize = it + 2
         })
         root.addView(label("Цвет кисти по умолчанию"))

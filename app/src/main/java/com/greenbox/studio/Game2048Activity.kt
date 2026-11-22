@@ -71,7 +71,7 @@ class Game2048Activity : AppCompatActivity(), BoardListener {
         Toast.makeText(this, "Ходов больше нет! Очки: $score", Toast.LENGTH_SHORT).show()
     }
 
-    class BoardView(context: android.content.Context) : View(context), OnTouchListener {
+    class BoardView(context: android.content.Context) : View(context), View.OnTouchListener {
 
         var listener: BoardListener? = null
         private val cells = Array(4) { IntArray(4) }

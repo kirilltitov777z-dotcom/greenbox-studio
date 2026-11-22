@@ -88,7 +88,7 @@ class SnakeActivity : AppCompatActivity(), SnakeListener {
         Toast.makeText(this, "Игра окончена!", Toast.LENGTH_SHORT).show()
     }
 
-    class SnakeView(context: android.content.Context) : View(context), OnTouchListener {
+    class SnakeView(context: android.content.Context) : View(context), View.OnTouchListener {
 
         var listener: SnakeListener? = null
         private val snake = ArrayList<Point>()

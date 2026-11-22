@@ -38,6 +38,13 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Generate release signing key
+        run: |
+          keytool -genkey -v -keystore app/release.jks -alias greenbox \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass greenbox123 -keypass greenbox123 \
+            -dname "CN=GreenBox, OU=Mobile, O=GreenBox, L=MSK, ST=MSK, C=RU"
+
       - name: Build debug and release APK
         run: ./gradlew assembleDebug assembleRelease --no-daemon --stacktrace
 
@@ -48,11 +55,11 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
 
-      - name: Upload release APK (unsigned)
+      - name: Upload signed release APK
         uses: actions/upload-artifact@v4
         with:
-          name: GreenBox-release-unsigned
-          path: app/build/outputs/apk/release/app-release-unsigned.apk
+          name: GreenBox-release-signed
+          path: app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
 
       - name: Attach APK to GitHub Release
@@ -61,4 +68,4 @@ jobs:
         with:
           files: |
             app/build/outputs/apk/debug/app-debug.apk
-            app/build/outputs/apk/release/app-release-unsigned.apk
+            app/build/outputs/apk/release/app-release.apk

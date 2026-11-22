@@ -2,14 +2,13 @@ package com.greenbox.studio
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.preference.PreferenceManager
 
 /** Simple shared-preferences backed settings used by the whole app. */
 object Prefs {
     private lateinit var sp: SharedPreferences
 
     fun init(context: Context) {
-        sp = PreferenceManager.getDefaultSharedPreferences(context.applicationContext)
+        sp = context.applicationContext.getSharedPreferences("greenbox_settings", Context.MODE_PRIVATE)
     }
 
     var theme: Int

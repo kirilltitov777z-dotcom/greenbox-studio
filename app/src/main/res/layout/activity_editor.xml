@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <Button android:id="@+id/btnOpen" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Открыть"
+                android:textSize="12sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnCamera" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Камера"
+                android:textSize="12sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnUndo" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="↶"
+                android:textSize="16sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnRedo" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="↷"
+                android:textSize="16sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnSave" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="70dp" android:background="@drawable/btn_green" android:text="Сохранить"
+                android:textSize="12sp" android:textColor="@color/white" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/btnShare" android:layout_width="wrap_content" android:layout_height="38dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Поделиться"
+                android:textSize="12sp" android:textColor="@color/green_dark" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E7EDE5">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="Photo preview" />
+
+        <com.greenbox.studio.DrawView
+            android:id="@+id/drawView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/filterRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <Button android:tag="0" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="66dp" android:background="@drawable/btn_soft" android:text="Оригинал"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="1" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="50dp" android:background="@drawable/btn_soft" android:text="Ч/Б"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="2" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Сепия"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="3" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Негатив"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="4" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Холод"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="5" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Тёплый"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="6" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Винтаж"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="7" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Нуар"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="8" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Неон"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="9" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Пастель"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="10" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Закат"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="11" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Аква"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="12" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Резкость"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="13" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Размытие"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="14" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Эмбос"
+                android:textSize="11sp" android:textColor="@color/green_dark" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_soft">
+
+        <LinearLayout
+            android:id="@+id/toolRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <Button android:tag="0" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_green" android:text="Яркость"
+                android:textSize="11sp" android:textColor="@color/white" android:layout_marginEnd="4dp" />
+            <Button android:tag="1" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="76dp" android:background="@drawable/btn_green" android:text="Контраст"
+                android:textSize="11sp" android:textColor="@color/white" android:layout_marginEnd="4dp" />
+            <Button android:tag="2" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="76dp" android:background="@drawable/btn_green" android:text="Насыщен."
+                android:textSize="11sp" android:textColor="@color/white" android:layout_marginEnd="4dp" />
+            <Button android:tag="3" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Поворот"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="4" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Отраз.↔"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="5" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Отраз.↕"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="6" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="50dp" android:background="@drawable/btn_soft" android:text="1:1"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="7" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="50dp" android:background="@drawable/btn_soft" android:text="4:3"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="8" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="54dp" android:background="@drawable/btn_soft" android:text="16:9"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="9" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="54dp" android:background="@drawable/btn_soft" android:text="Текст"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="10" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="70dp" android:background="@drawable/btn_soft" android:text="Стикеры"
+                android:textSize="11sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:tag="11" android:layout_width="wrap_content" android:layout_height="34dp"
+                android:minWidth="60dp" android:background="@drawable/btn_soft" android:text="Рисовать"
+                android:textSize="11sp" android:textColor="@color/green_dark" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/adjustPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/adjustTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Яркость"
+            android:textColor="@color/text"
+            android:textSize="13sp" />
+
+        <SeekBar
+            android:id="@+id/adjustSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="200"
+            android:progress="100" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/adjustCancel" android:layout_width="0dp" android:layout_height="36dp"
+                android:layout_weight="1" android:background="@drawable/btn_soft" android:text="Отмена"
+                android:textSize="12sp" android:textColor="@color/green_dark" android:layout_marginEnd="4dp" />
+            <Button android:id="@+id/adjustOk" android:layout_width="0dp" android:layout_height="36dp"
+                android:layout_weight="1" android:background="@drawable/btn_green" android:text="Применить"
+                android:textSize="12sp" android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/drawPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="6dp"
+        android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Цвет:" android:textColor="@color/muted" android:layout_gravity="center_vertical" />
+        <Button android:tag="0" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#FFFFFF" android:layout_marginStart="4dp" />
+        <Button android:tag="1" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#000000" android:layout_marginStart="4dp" />
+        <Button android:tag="2" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#F44336" android:layout_marginStart="4dp" />
+        <Button android:tag="3" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#4CAF50" android:layout_marginStart="4dp" />
+        <Button android:tag="4" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#2196F3" android:layout_marginStart="4dp" />
+        <Button android:tag="5" android:layout_width="28dp" android:layout_height="28dp"
+            android:background="#FFEB3B" android:layout_marginStart="4dp" />
+        <Button android:id="@+id/drawDone" android:layout_width="wrap_content" android:layout_height="34dp"
+            android:background="@drawable/btn_green" android:text="Готово" android:textSize="12sp"
+            android:textColor="@color/white" android:layout_marginStart="8dp" />
+        <Button android:id="@+id/drawClear" android:layout_width="wrap_content" android:layout_height="34dp"
+            android:background="@drawable/btn_soft" android:text="Очистить" android:textSize="12sp"
+            android:textColor="@color/green_dark" android:layout_marginStart="4dp" />
+    </LinearLayout>
+</LinearLayout>

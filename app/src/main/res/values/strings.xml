@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GreenBox</string>
+    <string name="tagline">Фоторедактор и мини-игры в одном приложении</string>
+    <string name="open_editor">📸  Фото редактор</string>
+    <string name="open_games">🎮  Игры</string>
+    <string name="editor_hint">Откройте фото, примените фильтры, рисуйте, добавляйте текст и сохраните результат.</string>
+    <string name="games_hint">6 мини-игр: змейка, 2048, крестики-нолики, память, кубики и реакция.</string>
+    <string name="about">GreenBox · версия 1.0\nСделано с любовью к зелёному цвету 🌿</string>
+    <string-array name="text_colors">
+        <item>Белый</item>
+        <item>Чёрный</item>
+        <item>Красный</item>
+        <item>Зелёный</item>
+        <item>Синий</item>
+        <item>Жёлтый</item>
+        <item>Розовый</item>
+    </string-array>
+</resources>

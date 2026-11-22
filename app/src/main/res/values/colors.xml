@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green">#43A047</color>
+    <color name="green_light">#C8E6A0</color>
+    <color name="green_soft">#E8F5E9</color>
+    <color name="bg">#F3F7F0</color>
+    <color name="card">#FFFFFF</color>
+    <color name="text">#1B2B1B</color>
+    <color name="muted">#6B7F6B</color>
+    <color name="white">#FFFFFF</color>
+</resources>

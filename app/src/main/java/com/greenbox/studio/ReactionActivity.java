@@ -19,7 +19,7 @@ public class ReactionActivity extends Activity {
     private final Random random = new Random();
     private boolean waiting = false;
     private long startTime = 0;
-    private int best = Integer.MAX_VALUE;
+    private long best = Long.MAX_VALUE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

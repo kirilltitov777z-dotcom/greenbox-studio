@@ -18,7 +18,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class Game2048Activity extends Activity implements BoardView.Listener {
+interface BoardListener {
+    void onScore(int score);
+    void onLose(int score);
+}
+
+public class Game2048Activity extends Activity implements BoardListener {
 
     private TextView scoreText;
     private BoardView board;
@@ -78,15 +83,10 @@ public class Game2048Activity extends Activity implements BoardView.Listener {
 
     static class BoardView extends View implements View.OnTouchListener {
 
-        interface Listener {
-            void onScore(int score);
-            void onLose(int score);
-        }
-
         final int[][] cells = new int[4][4];
         int score = 0;
         boolean over = false;
-        Listener listener;
+        BoardListener listener;
         float downX, downY;
         final Random random = new Random();
         final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);

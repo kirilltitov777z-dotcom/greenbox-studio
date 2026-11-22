@@ -18,7 +18,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SnakeActivity extends Activity implements SnakeView.Listener {
+interface SnakeListener {
+    void onScore(int score);
+    void onGameOver(int score);
+}
+
+public class SnakeActivity extends Activity implements SnakeListener {
 
     private TextView scoreText;
     private SnakeView game;
@@ -97,13 +102,8 @@ public class SnakeActivity extends Activity implements SnakeView.Listener {
 
     static class SnakeView extends View implements View.OnTouchListener {
 
-        interface Listener {
-            void onScore(int score);
-            void onGameOver(int score);
-        }
-
         static final int N = 20;
-        Listener listener;
+        SnakeListener listener;
         final ArrayList<Point> snake = new ArrayList<>();
         Point food;
         int dirX = 1, dirY = 0, score = 0;
@@ -112,11 +112,13 @@ public class SnakeActivity extends Activity implements SnakeView.Listener {
         float downX, downY;
         final Random random = new Random();
         final Handler handler = new Handler();
-        final Runnable tick = () -> {
+        final Runnable tick = this::stepAndSchedule;
+
+        private void stepAndSchedule() {
             if (!running) return;
             step();
             if (running) handler.postDelayed(tick, 120);
-        };
+        }
 
         SnakeView(android.content.Context c) {
             super(c);

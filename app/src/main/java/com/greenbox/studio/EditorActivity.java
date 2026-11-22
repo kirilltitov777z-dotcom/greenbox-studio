@@ -295,8 +295,8 @@ public class EditorActivity extends Activity {
     private Uri saveImage() {
         String name = "GreenBox_" + System.currentTimeMillis() + ".jpg";
         try {
-            Uri uri = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name, "GreenBox");
-            if (uri != null) { toast("Сохранено в галерею"); return uri; }
+            String saved = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, name, "GreenBox");
+            if (saved != null) { toast("Сохранено в галерею"); return Uri.parse(saved); }
         } catch (Throwable ignored) { }
         try {
             File dir = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "GreenBox");
